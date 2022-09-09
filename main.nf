@@ -15,6 +15,9 @@ process Passthrough {
 }
 
 process UseFile {
+    memory 1G
+    cpus 1
+    
     input:
     tuple val(i), path(bam)
 
