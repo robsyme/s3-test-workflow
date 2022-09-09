@@ -5,13 +5,13 @@ process Passthrough {
     cpus 1 
 
     input:
-    path("in.bam")
+    path(inbam)
 
     output:
     path('out.bam')
 
     script:
-    "cp in.bam out.bam"
+    "cp $inbam out.bam"
 }
 
 process UseFile {
