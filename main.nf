@@ -10,6 +10,7 @@ process Passthrough {
     output:
     path('out.bam')
 
+    script:
     "cp in.bam out.bam"
 }
 
@@ -23,6 +24,7 @@ process UseFile {
     output:
     path("*.sam")
 
+    script:
     "samtools view $bam | head > out.${i}.sam"
 }
 
