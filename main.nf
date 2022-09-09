@@ -5,12 +5,12 @@ process Passthrough {
     cpus 1 
 
     input:
-    path(bam)
+    path("in.bam")
 
     output:
-    path(bam)
+    path('out.bam')
 
-    "echo does nothing"
+    "cp in.bam out.bam"
 }
 
 process UseFile {
