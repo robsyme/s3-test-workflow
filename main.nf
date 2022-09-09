@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow 
 
 process Passthrough {
-    memory 1G
+    memory '1G'
     cpus 1 
 
     input:
@@ -15,7 +15,7 @@ process Passthrough {
 }
 
 process UseFile {
-    memory 1G
+    memory '1G'
     cpus 1
 
     input:
