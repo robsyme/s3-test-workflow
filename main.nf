@@ -8,9 +8,9 @@ process Passthrough {
     path(bam)
 
     output:
-    path(bam)
+    path("out.bam")
 
-    "echo does nothing"
+    "cp $bam > out.bam"
 }
 
 process UseFile {
