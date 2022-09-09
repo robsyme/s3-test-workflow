@@ -8,9 +8,9 @@ process Passthrough {
     path(bam)
 
     output:
-    path("out.bam")
+    path(bam)
 
-    "cp $bam > out.bam"
+    "echo does nothing"
 }
 
 process UseFile {
@@ -18,9 +18,9 @@ process UseFile {
     cpus 1
 
     input:
-    tuple val(i), path(bam)
+    tuple path(bam), val(i)
 
-    "du -sh $bam"
+    "ls -lh"
 }
 
 
