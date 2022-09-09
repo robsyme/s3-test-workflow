@@ -20,7 +20,10 @@ process UseFile {
     input:
     tuple path(bam), val(i)
 
-    "ls -lh"
+    output:
+    path("*.sam")
+
+    "samtools view $bam | head > out.${i}.sam"
 }
 
 
@@ -30,5 +33,5 @@ workflow {
     Channel.fromPath(params.infile)
     | Passthrough
     | combine(ints)
-    | view
+    | UseFile
 }
